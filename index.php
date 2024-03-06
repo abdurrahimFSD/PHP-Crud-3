@@ -127,14 +127,19 @@ $no = 1;
                             </td>
 
                             <td class="text-center">
+                                <!-- Jika id_mahasiswa dari baris data yang sedang diproses adalah 1, maka URL yang dihasilkan akan menjadi: -->
+                                <!-- /kelola.php?update=1 -->
                                 <a href="./kelola.php?update=<?php echo $result['id_mahasiswa']; ?>" type="button" class="btn btn-sm btn-primary me-lg-1 mb-2 mb-lg-0">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                     Update
                                 </a>
-                                <a href="./proses.php?delete=<?php echo $result['id_mahasiswa']; ?>" type="button" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda ingin menghapus data ini..?')">
-                                    <i class="fa-solid fa-trash"></i>
-                                    Delete
-                                </a>
+                                <form style="display: inline-block;" action="./proses.php" method="post" onsubmit="return confirm('Apakah anda ingin menghapus data ini..?')">
+                                    <input type="hidden" name="delete" value="<?php echo $result['id_mahasiswa']; ?>">
+                                    <button type="submit" class="btn btn-sm btn-danger">
+                                        <i class="fa-solid fa-trash"></i> Delete
+                                    </button>
+                                </form>
+
                             </td>
 
                     <?php

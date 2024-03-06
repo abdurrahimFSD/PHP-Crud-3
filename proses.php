@@ -30,9 +30,9 @@ if(isset($_POST['action'])) {
     
 }
 
-if(isset($_GET['delete'])) {
+if(isset($_POST['delete'])) {
     // Panggil Function deleteData
-    $success = deleteData($_GET);
+    $success = deleteData($_POST);
 
     if ($success) {
         $_SESSION['alert'] = "Data Berhasil Dihapus";
