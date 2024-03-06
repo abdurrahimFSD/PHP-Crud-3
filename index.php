@@ -99,27 +99,27 @@ $no = 1;
                             </td>
                             <td>
                                 <?php
-                                    echo htmlspecialchars($result['npm']);
+                                    echo strip_tags($result['npm']);
                                 ?>
                             </td>
                             <td>
                                 <?php
-                                    echo htmlspecialchars($result['nama_lengkap']);
+                                    echo strip_tags($result['nama_lengkap']);
                                 ?>
                             </td>
                             <td>
                                 <?=
-                                    htmlspecialchars($result['jenis_kelamin']);
+                                    strip_tags($result['jenis_kelamin']);
                                 ?>
                             </td>
                             <td>
                                 <?=
-                                    htmlspecialchars($result['prodi']);
+                                    strip_tags($result['prodi']);
                                 ?>
                             </td>
                             <td>
                                 <?php
-                                    echo htmlspecialchars($result['alamat']);
+                                    echo strip_tags($result['alamat']);
                                 ?>
                             </td>
                             <td>
