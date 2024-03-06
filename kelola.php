@@ -12,8 +12,8 @@ $jenisKelamin = '';
 $prodi = '';
 $alamat = '';
 
-if(isset($_GET['update'])) {
-    $idMahasiswa = $_GET['update'];
+if(isset($_POST['update'])) {
+    $idMahasiswa = $_POST['update'];
 
     $query = "SELECT * FROM tb_mahasiswa WHERE id_mahasiswa = '$idMahasiswa';";
     $sql = mysqli_query($connectDatabase, $query);
@@ -57,7 +57,7 @@ if(isset($_GET['update'])) {
         <div class="row my-4">
             <div class="col-12 col-md-6 d-flex align-items-center">
                 <?php
-                    $action = isset($_GET['update']) ? 'update' : 'create';
+                    $action = isset($_POST['update']) ? 'update' : 'create';
                     $buttonText = ($action === 'update') ? 'Update' : 'Create';
                 ?>
                 <h5 class="mb-0">
@@ -125,7 +125,7 @@ if(isset($_GET['update'])) {
             <div class="row mb-4">
                 <label for="foto" class="col-sm-2 col-form-label">Foto</label>
                 <div class="col-sm-10">
-                    <input type="file" class="form-control" name="foto" id="foto" accept="image/*" <?php if(!isset($_GET['update'])) {echo "required";} ?> >
+                    <input type="file" class="form-control" name="foto" id="foto" accept="image/*" <?php if(!isset($_POST['update'])) {echo "required";} ?> >
                 </div>
             </div>
 
@@ -133,7 +133,7 @@ if(isset($_GET['update'])) {
                 <div class="col">
 
                     <?php
-                        $action = isset($_GET['update']) ? 'update' : 'create';
+                        $action = isset($_POST['update']) ? 'update' : 'create';
                         $buttonText = ($action === 'update') ? 'Update Data' : 'Create Data';
                     ?>
                     <button class="btn btn-success me-2" type="submit" name="action" value="<?= $action; ?>">
